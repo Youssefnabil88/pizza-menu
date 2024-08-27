@@ -1,13 +1,20 @@
-function Pizza() {
+import React from "react";
+function Pizza({myPizza}) {
+  const { name, ingredients, price, photoName} = myPizza;
   return (
     <>
-      <h2>Pizza</h2>
-      <div>
+      <div className="pizza">
         <img
-          src="pizzas/spinaci.jpg"
-          alt="spinaci pizza"
-          style={{ width: "200px", height: "200px" }}
+          src={`${process.env.PUBLIC_URL}/${photoName}`}
+          alt={name}
         ></img>
+    <div>
+       <h2>{name}</h2>
+      <h4>{ingredients}</h4>
+      <h4>{price}</h4>
+    </div>
+     
+
       </div>
     </>
   );
