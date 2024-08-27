@@ -28,7 +28,10 @@ function Footer() {
 
   return (
     <>
-      <h3> {new Date().toLocaleTimeString()} {isOpen()}</h3>
+    <footer className="footer">
+      <h3 > {new Date().toLocaleTimeString()} {isOpen()}</h3>
+    </footer>
+      
     </>
   );
 }
