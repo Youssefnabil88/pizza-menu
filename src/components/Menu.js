@@ -46,15 +46,16 @@ const pizzaData = [
   },
 ];
 
-
-
 function Menu() {
   return (
-    <main className="container">
-      {pizzaData.map((pizza) => (
-        <Pizza key={pizza.name} myPizza={pizza} />
-      ))}
-    </main>
+    <div className="menu">
+      <h2>Our Menu</h2>
+      <ul className="pizzas">
+        {pizzaData.map((pizza) => (
+          <Pizza key={pizza.name} myPizza={pizza} />
+        ))}
+      </ul>
+    </div>
   );
 }
 
