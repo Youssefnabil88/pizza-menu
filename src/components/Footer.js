@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Order from "./Order";
+
 
 function Footer() {
   let [date, setDate] = useState(new Date());
@@ -10,28 +12,17 @@ function Footer() {
   }, []);
 
   const hour = new Date().getHours();
-  
+
   const openHour = 12;
   const closeHour = 22;
 
-  function isOpen(){
-    if(hour >= openHour && hour <= closeHour){
-      return "We're open now";
-    }
-    else{
-      return "Sorry we are closed!";
-    }
-  }
-
-
-
+  const isOpen = hour >= openHour && hour <= closeHour;
 
   return (
     <>
-    <footer className="footer">
-      <h3 > {new Date().toLocaleTimeString()} {isOpen()}</h3>
-    </footer>
-      
+      <footer className="footer">
+        <Order openHour={openHour} closeHour = {closeHour} isOpen={isOpen}/>
+      </footer>
     </>
   );
 }

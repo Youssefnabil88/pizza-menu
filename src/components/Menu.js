@@ -47,13 +47,15 @@ const pizzaData = [
 ];
 
 function Menu() {
+  const pizzas = pizzaData;
+  const thereIsPizzas = pizzas.length;
   return (
     <div className="menu">
       <h2>Our Menu</h2>
       <ul className="pizzas">
-        {pizzaData.map((pizza) => (
+        { thereIsPizzas > 0 ? pizzas.map((pizza) => (
           <Pizza key={pizza.name} myPizza={pizza} />
-        ))}
+        )):"Error on loading come on later :)"}
       </ul>
     </div>
   );
